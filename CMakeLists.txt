@@ -22,6 +22,6 @@ find_package(SDL2_image REQUIRED)
 
 include_directories(${SDL2_INCLUDE_DIRS} ${SDL2_IMAGE_INCLUDE_DIRS})
 
-add_executable(TriEngine main.cpp Game.cpp Game.h rendering/texture/TextureManager.cpp rendering/texture/TextureManager.h rendering/GameRenderer.cpp rendering/GameRenderer.h rendering/tileMap/TileMap.cpp rendering/tileMap/TileMap.h ecs/EntityComponentSystem.h ecs/components/PositionComponent.h ecs/components/SpriteComponent.cpp ecs/components/SpriteComponent.h)
+add_executable(TriEngine main.cpp Game.cpp Game.h rendering/texture/TextureManager.cpp rendering/texture/TextureManager.h rendering/GameRenderer.cpp rendering/GameRenderer.h ecs/EntityComponentSystem.h ecs/components/PositionComponent.h ecs/components/SpriteComponent.cpp ecs/components/SpriteComponent.h)
 
 target_link_libraries(TriEngine ${SDL2_LIBRARIES} ${SDL2_IMAGE_LIBRARIES})
