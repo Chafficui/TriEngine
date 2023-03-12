@@ -4,38 +4,31 @@
 
 #ifndef TRIENGINE_TRANSFORMCOMPONENT_H
 #define TRIENGINE_TRANSFORMCOMPONENT_H
+
 #include "../Components.h"
+#include "../../utils/Math.h"
 
 
-class TransformComponent : public Component {
-private:
-    int x;
-    int y;
-public:
-    TransformComponent(int xPos, int yPos) {
-        x = xPos;
-        y = yPos;
+struct TransformComponent : public Component {
+    Vector2D position;
+
+    TransformComponent(float xPos, float yPos) {
+        position.x = xPos;
+        position.y = yPos;
     }
 
     TransformComponent() {
-        x = 0;
-        y = 0;
+        position.x = .0f;
+        position.y = .0f;
     }
 
-    [[nodiscard]] int getX() const {
-        return x;
+    void move(float x, float y) {
+        position.x += x;
+        position.y += y;
     }
 
-    [[nodiscard]] int getY() const {
-        return y;
-    }
-
-    void setX(int xPos) {
-        x = xPos;
-    }
-
-    void setY(int yPos) {
-        y = yPos;
+    void move(Vector2D vec) {
+        position += vec;
     }
 };
 
