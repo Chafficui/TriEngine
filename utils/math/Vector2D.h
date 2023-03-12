@@ -62,6 +62,8 @@ public:
     Vector2D &operator+=(const float &i);
 
     Vector2D &operator-=(const float &i);
+
+    friend std::ostream &operator<<(std::ostream &stream, const Vector2D &vec);
 };
 
 

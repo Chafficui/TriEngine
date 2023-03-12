@@ -125,3 +125,8 @@ Vector2D &Vector2D::operator+=(const float &i) {
 Vector2D &Vector2D::operator-=(const float &i) {
     return this->subtract(i);
 }
+
+std::ostream &operator<<(std::ostream &stream, const Vector2D &vec) {
+    stream << "Vector2D(" << vec.x << ", " << vec.y << ")";
+    return stream;
+}
