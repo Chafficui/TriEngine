@@ -2,21 +2,22 @@
 // Created by felix on 12.03.2023.
 //
 
-#ifndef TRIENGINE_POSITIONCOMPONENT_H
-#define TRIENGINE_POSITIONCOMPONENT_H
+#ifndef TRIENGINE_TRANSFORMCOMPONENT_H
+#define TRIENGINE_TRANSFORMCOMPONENT_H
+#include "../Components.h"
 
 
-class PositionComponent : public Component {
+class TransformComponent : public Component {
 private:
     int x;
     int y;
 public:
-    PositionComponent(int xPos, int yPos) {
+    TransformComponent(int xPos, int yPos) {
         x = xPos;
         y = yPos;
     }
 
-    PositionComponent() {
+    TransformComponent() {
         x = 0;
         y = 0;
     }
@@ -39,4 +40,4 @@ public:
 };
 
 
-#endif //TRIENGINE_POSITIONCOMPONENT_H
+#endif //TRIENGINE_TRANSFORMCOMPONENT_H

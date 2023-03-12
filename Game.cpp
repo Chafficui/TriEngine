@@ -3,9 +3,7 @@
 //
 
 #include "Game.h"
-#include "ecs/EntityComponentSystem.h"
-#include "ecs/components/PositionComponent.h"
-#include "ecs/components/SpriteComponent.h"
+#include "ecs/Components.h"
 
 Game::Game() = default;
 
@@ -35,7 +33,7 @@ int Game::init(const char* title, int x, int y, int width, int height, bool full
                 std::cout << "Renderer created" << std::endl;
                 isRunning = true;
 
-                newPlayer.addComponent<PositionComponent>(100, 100);
+                newPlayer.addComponent<TransformComponent>(100, 100);
                 newPlayer.addComponent<SpriteComponent>("assets/Unbenannt.png");
 
                 return 1;
