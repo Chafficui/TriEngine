@@ -20,9 +20,21 @@ Vector2D &Vector2D::add(const Vector2D &vec) {
     return *this;
 }
 
+Vector2D &Vector2D::add(const float &i) {
+    this->x += i;
+    this->y += i;
+    return *this;
+}
+
 Vector2D &Vector2D::subtract(const Vector2D &vec) {
     this->x -= vec.x;
     this->y -= vec.y;
+    return *this;
+}
+
+Vector2D &Vector2D::subtract(const float &i) {
+    this->x -= i;
+    this->y -= i;
     return *this;
 }
 
@@ -32,9 +44,21 @@ Vector2D &Vector2D::multiply(const Vector2D &vec) {
     return *this;
 }
 
+Vector2D &Vector2D::multiply(const float &i) {
+    this->x *= i;
+    this->y *= i;
+    return *this;
+}
+
 Vector2D &Vector2D::divide(const Vector2D &vec) {
     this->x /= vec.x;
     this->y /= vec.y;
+    return *this;
+}
+
+Vector2D &Vector2D::divide(const float &i) {
+    this->x /= i;
+    this->y /= i;
     return *this;
 }
 
@@ -68,4 +92,36 @@ Vector2D &Vector2D::operator*=(const Vector2D &vec) {
 
 Vector2D &Vector2D::operator/=(const Vector2D &vec) {
     return this->divide(vec);
+}
+
+Vector2D &Vector2D::operator*(const float &i) {
+    return this->multiply(i);
+}
+
+Vector2D &Vector2D::operator/(const float &i) {
+    return this->divide(i);
+}
+
+Vector2D &Vector2D::operator+(const float &i) {
+    return this->add(i);
+}
+
+Vector2D &Vector2D::operator-(const float &i) {
+    return this->subtract(i);
+}
+
+Vector2D &Vector2D::operator*=(const float &i) {
+    return this->multiply(i);
+}
+
+Vector2D &Vector2D::operator/=(const float &i) {
+    return this->divide(i);
+}
+
+Vector2D &Vector2D::operator+=(const float &i) {
+    return this->add(i);
+}
+
+Vector2D &Vector2D::operator-=(const float &i) {
+    return this->subtract(i);
 }
