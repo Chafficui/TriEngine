@@ -23,6 +23,8 @@ jobs:
     - name: Install dependencies
       # Install any dependencies required to build your project like sdl2 and sdl2_image here
       run: |
+          sudo apt-get update
+          sudo apt-get install -y cmake
           sudo apt-get install -y libsdl2-dev
           sudo apt-get install -y libsdl2-image-dev
           sudo apt-get install -y libsdl2-ttf-dev
