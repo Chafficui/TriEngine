@@ -17,8 +17,8 @@ void SpriteComponent::init() {
     srcRect.x = srcRect.y = 0;
     srcRect.w = srcRect.h = 32;
     destRect.w = destRect.h = 64;
-    destRect.x = transform->getX();
-    destRect.y = transform->getY();
+    destRect.x = (int)transform->position.x;
+    destRect.y = (int)transform->position.y;
 }
 
 void SpriteComponent::setTexture(const char *path) {
@@ -26,6 +26,6 @@ void SpriteComponent::setTexture(const char *path) {
 }
 
 void SpriteComponent::update() {
-    destRect.x = transform->getX();
-    destRect.y = transform->getY();
+    destRect.x = (int)transform->position.x;
+    destRect.y = (int)transform->position.y;
 }

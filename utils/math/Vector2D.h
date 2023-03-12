@@ -4,7 +4,7 @@
 
 #ifndef TRIENGINE_VECTOR2D_H
 #define TRIENGINE_VECTOR2D_H
-#include <iostream>
+#include "../Math.h"
 
 class Vector2D {
 public:
