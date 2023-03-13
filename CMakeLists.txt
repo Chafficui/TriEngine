@@ -5,6 +5,25 @@ set(CMAKE_CXX_STANDARD 17)
 
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_SOURCE_DIR}/cmake/")
 
+if (WIN32)
+    set(SDL2_PATH "C:/Users/felix/Documents/SDL2") #change to your SDL2 path
+    set(SDL2_image_PATH "C:/Users/felix/Documents/SDL2_image") #change to your SDL2_image path
+
+    set(SDL2_DIR "${SDL2_PATH}/cmake")
+    set(SDL2_image_DIR "${SDL2_image_PATH}/cmake")
+
+    set(SDL2_INCLUDE_DIRS "${SDL2_PATH}/include")
+    set(SDL2_IMAGE_INCLUDE_DIRS "${SDL2_image_PATH}/include")
+
+    if (CMAKE_SIZEOF_VOID_P EQUAL 8)
+        set(SDL2_LIBRARIES "${SDL2_PATH}/lib/x64/SDL2.lib;${SDL2_PATH}/lib/x64/SDL2main.lib")
+        set(SDL2_IMAGE_LIBRARIES "${SDL2_image_PATH}/lib/x64/SDL2_image.lib")
+    else()
+        set(SDL2_LIBRARIES "${SDL2_PATH}/lib/x86/SDL2.lib;${SDL2_PATH}/lib/x86/SDL2main.lib")
+        set(SDL2_IMAGE_LIBRARIES "${SDL2_image_PATH}/lib/x86/SDL2_image.lib")
+    endif()
+endif()
+
 find_package(SDL2 REQUIRED)
 find_package(SDL2_image REQUIRED)
 
