@@ -4,6 +4,7 @@
 
 #include "Game.h"
 #include "ecs/Components.h"
+#include "io/Keyboard.h"
 
 Game::Game() = default;
 
@@ -48,6 +49,10 @@ void Game::handleEvents() {
     SDL_Event event;
     SDL_PollEvent(&event);
     switch (event.type) {
+        case SDL_KEYDOWN:
+        case SDL_KEYUP:
+            Keyboard::handleEvent(event);
+            break;
         case SDL_QUIT:
             isRunning = false;
             break;
@@ -57,6 +62,8 @@ void Game::handleEvents() {
 }
 
 void Game::update() {
+    manager.refresh();
+    Keyboard::update();
     manager.update();
 }
 
